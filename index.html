@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WheyShop.vn — Thực phẩm bổ sung</title>
+  <meta name="description" content="WheyShop.vn - Whey, BCAA, Creatine, Pre-workout, Vitamin D3K2, Omega-3. Flash Sale, đánh giá, bình luận, giỏ hàng." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="left-group">
+        <a href="#" class="logo">WheyShop.vn</a>
+      </div>
+
+      <div class="center-group">
+        <div class="search-wrap">
+          <input id="globalSearch" type="search" placeholder="Tìm sản phẩm, ví dụ: whey, bcaa, creatine..." />
+        </div>
+      </div>
+
+      <div class="right-group">
+        <button id="themeToggle" class="icon-btn" title="Chuyển giao diện">🌙</button>
+        <button id="loginBtn" class="auth-btn">Đăng nhập</button>
+        <button id="cartBtn" class="cart-btn">🛒 <span id="cartCount" class="cart-count">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <aside class="sidebar">
+  <button id="homeBtn" class="home-btn">🏠 Trang chủ</button>
+
+  <button id="toggleMenu" class="menu-btn">☰ Danh mục</button>
+
+  <nav id="categoryMenu" class="category-nav hidden">
+    <ul>
+      <li class="cat-item" data-cat="flash">Flash Sale</li>
+      <li class="cat-item" data-cat="new">Sản Phẩm Mới</li>
+      <li class="cat-item" data-cat="clearance">Thanh Lý</li>
+      <li class="cat-item" data-cat="whey">Whey Protein</li>
+      <li class="cat-item" data-cat="mass">Sữa Tăng Cân</li>
+      <li class="cat-item" data-cat="recovery">Phục Hồi Cơ Bắp</li>
+      <li class="cat-item" data-cat="strength">Tăng Sức Mạnh</li>
+      <li class="cat-item" data-cat="weightloss">Hỗ Trợ Giảm Cân</li>
+      <li class="cat-item" data-cat="vitamin">Vitamin & Khoáng chất</li>
+      <li class="cat-item" data-cat="omega">Dầu cá Omega-3</li>
+      <li class="cat-item" data-cat="accessories">Phụ Kiện Tập Gym</li>
+    </ul>
+  </nav>
+</aside>
+
+
+    <section class="content">
+      <section class="banner-slider" id="bannerSlider">
+        <div class="slides">
+          <div class="slide" data-index="0"><img src="images/banner1.jpg" alt="Banner 1" /></div>
+          <div class="slide" data-index="1"><img src="images/banner2.jpg" alt="Banner 2" /></div>
+          <div class="slide" data-index="2"><img src="images/banner3.jpg" alt="Banner 3" /></div>
+        </div>
+        <div class="slider-controls">
+          <button id="prevSlide" class="ctrl">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="24" height="24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+          <button id="nextSlide" class="ctrl">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="24" height="24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="flash-section">
+        <div class="section-head">
+          <h2>FLASH SALE</h2>
+          <div id="countdown" class="countdown">-- ngày --:--:--</div>
+        </div>
+        <div class="flash-grid" id="flashGrid"></div>
+      </section>
+
+      <section class="promo-banner">
+        <img src="images/promo-mini.jpg" alt="Promo banner" />
+      </section>
+
+      <section class="all-products">
+        <h3>Sản phẩm khác</h3>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <div id="modalRoot" class="modal-root" aria-hidden="true"></div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>VỀ WHEYSHOP</h4>
+        <p>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+          Địa chỉ: 288/19A LÊ VĂN QUỚI , BÌNH TÂN , TP. Hồ Chí Minh
+        </p>
+        <p>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
+          Điện thoại: 0352013867
+        </p>
+        <p>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-1.95-2.445L.05 3.555zM2 3.5a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5H2zM8 8.5l-4.5 3V5l4.5 3zm4.5-3.5L8 8.5l4.5 3V5z"/></svg>
+          Email: phamthanhduongoppo@gmail.com
+        </p>
+        <p>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
+          Giờ làm việc: 8:00 - 21:00 (T2 - CN)
+        </p>
+      </div>
+      <div class="footer-column">
+        <h4>CHĂM SÓC KHÁCH HÀNG</h4>
+        <ul>
+          <li><a href="#">Trung tâm trợ giúp</a></li>
+          <li><a href="#">Chính sách vận chuyển</a></li>
+          <li><a href="#">Chính sách đổi trả</a></li>
+          <li><a href="#">Chính sách bảo mật</a></li>
+          <li><a href="#">Hướng dẫn chọn size</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>TÀI KHOẢN</h4>
+        <ul>
+          <li><a href="#">Đăng nhập</a></li>
+          <li><a href="#">Đăng ký</a></li>
+          <li><a href="#">Lịch sử đơn hàng</a></li>
+          <li><a href="#">Theo dõi đơn hàng</a></li>
+          <li><a href="#">Mã ưu đãi</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+        <div class="social-icons">
+          <a href="#"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.32 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 12 2.04Z"></path></svg></a>
+          <a href="#"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"></path></svg></a>
+          <a href="#"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12.53,10.44L20,1.96H18.58L11.83,9.5L6.4,1.96H3L10.8,11.54L3,21.96H4.42L11.53,13.28L17.2,21.96H20.6L12.53,10.44M11.1,12.5L10.33,11.5L4.86,2.83H7.5L12.2,9.3L12.97,10.3L18.73,21.17H16L11.1,12.5Z"></path></svg></a>
+        </div>
+        <h4>PHƯƠNG THỨC THANH TOÁN</h4>
+        <div class="payment-icons">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+          <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" alt="Mastercard" />
+          <img src="https://img.icons8.com/color/48/000000/jcb.png" alt="JCB" />
+          <span>COD</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 WheyShop. Đã đăng ký bản quyền.</p>
+      <div class="badges">
+        <span>DMCA PROTECTED</span>
+        <span>Đã Thông Báo Bộ Công Thương</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

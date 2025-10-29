@@ -32,15 +32,15 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetic
 
 /* CSS cho các nút trong sidebar */
 .home-btn, .menu-btn {
-  display: block; /* Hiển thị dạng block */
-  width: 100%; /* Chiếm hết chiều rộng */
+  display: block;
+  width: 100%;
   padding: 10px;
-  margin-bottom: 10px; /* Khoảng cách giữa các nút */
-  background-color: var(--card); /* Màu nền giống sidebar */
-  color: var(--text); /* Màu chữ */
-  border: 1px solid rgba(0,0,0,0.1); /* Viền nhẹ */
-  border-radius: 8px; /* Bo góc */
-  text-align: left; /* Căn chữ trái */
+  margin-bottom: 10px;
+  background-color: var(--card);
+  color: var(--text);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-align: left;
   cursor: pointer;
   font-size: 1rem;
 }
@@ -48,7 +48,7 @@ body.dark .home-btn, body.dark .menu-btn {
    border: 1px solid rgba(255,255,255,0.1);
 }
 .home-btn:hover, .menu-btn:hover {
-  background-color: rgba(0,0,0,0.05); /* Hiệu ứng hover */
+  background-color: rgba(0,0,0,0.05);
 }
 body.dark .home-btn:hover, body.dark .menu-btn:hover {
   background-color: rgba(255,255,255,0.05);
@@ -60,7 +60,7 @@ body.dark .home-btn:hover, body.dark .menu-btn:hover {
 .category-nav li.active{background:linear-gradient(90deg, rgba(255,77,0,0.08), rgba(255,122,80,0.04));font-weight:700;color:var(--brand)}
 .content{}
 
-/* === THÊM CLASS HIDDEN (CODE 11) === */
+/* === Đảm bảo class hidden LUÔN ẩn phần tử === */
 .hidden {
   display: none !important;
 }
@@ -73,9 +73,8 @@ body.dark .home-btn:hover, body.dark .menu-btn:hover {
 .banner-slider img{
   width:100%;
   height:320px;
-  /* === ĐÂY LÀ THAY ĐỔI TRONG CODE 02 === */
-  object-fit:contain; /* Đổi lại để thấy toàn bộ ảnh */
-  background:transparent; /* Bỏ nền trắng để hòa vào nền trang web */
+  object-fit:contain;
+  background:transparent;
   display:block;
 }
 .slider-controls{
@@ -114,7 +113,7 @@ body.dark .home-btn:hover, body.dark .menu-btn:hover {
 .flash-section{margin-bottom:16px}
 .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
 .countdown{background:var(--card);padding:8px;border-radius:8px;box-shadow:var(--shadow);font-weight:700}
-.flash-grid{display:flex;gap:12px;overflow-x:auto; /* Luôn cho cuộn ngang */ padding-bottom:6px}
+.flash-grid{display:flex;gap:12px;overflow-x:auto; padding-bottom:6px}
 .flash-grid .card{min-width:300px;padding:12px;background:var(--card);border-radius:12px;box-shadow:var(--shadow);cursor:pointer}
 .card img{
   width:100%;
@@ -169,6 +168,7 @@ body.dark .home-btn:hover, body.dark .menu-btn:hover {
 }
 .modal-info{flex:1}
 .hr{height:1px;background:rgba(0,0,0,0.06);margin:12px 0;border-radius:2px}
+body.dark .hr { background:rgba(255,255,255,0.1); }
 
 /* === STYLE MỚI CHO MODAL ĐĂNG NHẬP (CODE 05) === */
 .login-options { display: flex; flex-direction: column; gap: 10px; }
@@ -201,7 +201,6 @@ body.dark .form-group input {
   margin-top: 30px;
   border-top: 1px solid #eee; /* Đường kẻ ngăn cách */
 }
-/* CSS cho giao diện Tối (nếu có) */
 body.dark .site-footer {
   border-top: 1px solid rgba(120, 120, 120, 0.2);
 }
@@ -308,7 +307,7 @@ body.dark .badges span {
 }
 
 
-/* === responsive (SỬA LẠI TRONG CODE 11) === */
+/* === responsive (CODE 11/12) === */
 @media(max-width:980px){
   .main{
     grid-template-columns:1fr; /* Chỉ còn 1 cột */
@@ -318,13 +317,18 @@ body.dark .badges span {
     position: static; /* Bỏ sticky */
     height:auto; /* Chiều cao tự động */
     margin-bottom: 15px; /* Thêm khoảng cách dưới */
-    /* Không cần overflow:auto nữa */
+    /* Không cần overflow */
   }
+  /* Đảm bảo menu nav KHÔNG bị ép hiển thị trên mobile */
+  /* .sidebar .category-nav { display: none; } */ /* Không cần dòng này nếu .hidden hoạt động */
+
   .banner-slider img{
     height:220px /* Banner nhỏ lại */
   }
-  /* Bỏ flex-direction: column để flash sale cuộn ngang */
-  /* .flash-grid{flex-direction:column} */
+  /* Flash sale luôn cuộn ngang */
+  .flash-grid {
+      overflow-x: auto;
+  }
 
   /* Footer xếp dọc trên mobile */
   .footer-container {
@@ -353,6 +357,8 @@ body.dark .badges span {
   cursor: pointer;
   transition: color 0.2s ease;
 }
+body.dark .star-rating label { color: #555; } /* Màu sao tối hơn trên nền tối */
+
 
 /* Khi di chuột qua một sao, tất cả sao bên trái nó (do đã reverse) sẽ sáng */
 .star-rating:hover label {
